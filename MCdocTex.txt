@@ -1,0 +1,309 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Minecraft Doc</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        /* General page styling */
+        body {
+            background-color: #3E3E3E;
+            font-family: 'Press Start 2P', cursive; /* Minecraft-like font */
+        }
+
+        /* Page border styling */
+        .page-border {
+            border: 15px solid #7C7C7C;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 1200px;
+            background-color: #f9f9f9;
+        }
+
+        /* Tab container */
+        .tab-container {
+            margin: 20px 0;
+        }
+
+        /* Style the tab links */
+        .tab {
+            overflow: hidden;
+            background-color: #f1f1f1;
+        }
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 30px; /* Increased right padding */
+            transition: 0.3s;
+            font-family: 'Press Start 2P', cursive; /* Font for tab buttons */
+            position: relative; /* For positioning the arrow */
+            margin-right: 5px; /* Space between buttons */
+        }
+
+        .tab button:hover {
+            background-color: #4CAF50; /* Minecraft green */
+            color: white;
+        }
+
+        /* Create an active/current tab link */
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        /* Arrow icon */
+        .arrow {
+            position: absolute;
+            right: 15px; /* Position it on the right with more space */
+            top: 50%; /* Center it vertically */
+            transform: translateY(-50%); /* Adjust for centering */
+            transition: transform 0.3s; /* Animation for the arrow */
+        }
+
+        /* Arrow down class */
+        .arrow.down {
+            transform: translateY(-50%) rotate(180deg); /* Rotate 180 degrees for down */
+        }
+
+        /* Tab content */
+        .tabcontent {
+            display: none;
+            padding: 20px;
+            border-top: none;
+        }
+
+        /* Image styling */
+        img {
+            width: 100%; /* Adjust width for banner */
+            height: auto;
+            margin: 10px 0;
+            border: 5px solid #7C7C7C;
+            border-radius: 5px;
+            box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Button styling */
+        .download-button {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            margin: 10px 0;
+        }
+
+        .download-button:hover {
+            background-color: #45a049; /* Slightly darker green */
+        }
+
+        /* Box styling for downloads and buttons */
+        .download-box {
+            border: 2px solid #7C7C7C;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #f0f0f0;
+        }
+
+        /* Section styling */
+        .section {
+            display: none; /* Hide sections by default */
+        }
+
+        /* Guide toggle buttons */
+        .guide-toggle {
+            padding: 10px 30px; /* Increased padding to prevent overlap */
+            margin: 5px;
+            background-color: #f1f1f1;
+            border: none;
+            cursor: pointer;
+            font-family: 'Press Start 2P', cursive; /* Font for toggle buttons */
+            position: relative; /* For positioning the arrow */
+            margin-right: 5px; /* Space between buttons */
+        }
+
+        .guide-toggle:hover {
+            background-color: #4CAF50; /* Minecraft green */
+            color: white;
+        }
+
+        /* Arrow for guide toggle buttons */
+        .guide-toggle .arrow {
+            right: 15px; /* Position it on the right with more space */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page-border">
+        <h1>Welcome to the Minecraft Documentation</h1>
+        <p>This website is a guide/documentation of Minecraft Addons, Structures, and Templates. Start your Minecraft journey here!</p>
+
+        <!-- Banner image -->
+        <img src="Images/MinecraftEDUBanner.jfif" alt="Minecraft Edu Banner" style="width: 100%; height: auto; max-height: 200px; object-fit: cover;">
+
+        <!-- Tab links -->
+        <div class="tab-container">
+            <div class="tab">
+                <button class="tablinks" onclick="openTab(event, 'Structures')">Structures<span class="arrow">&#9650;</span></button>
+                <button class="tablinks" onclick="openTab(event, 'Templates')">Templates<span class="arrow">&#9650;</span></button>
+                <button class="tablinks" onclick="openTab(event, 'Addons')">Addons<span class="arrow">&#9650;</span></button>
+                <button class="tablinks" onclick="openTab(event, 'Worlds')">Worlds<span class="arrow">&#9650;</span></button>
+            </div>
+        </div>
+
+        <!-- Tab content -->
+        <div id="Structures" class="tabcontent">
+            <h2>Structure Downloads</h2>
+            <button class="guide-toggle" onclick="toggleGuide('StructuresDownloads', this)">View Downloads<span class="arrow">&#9650;</span></button>
+            <button class="guide-toggle" onclick="toggleGuide('StructuresGuide', this)">View Installation Guide<span class="arrow">&#9650;</span></button>
+
+            <div id="StructuresDownloads" class="section">
+                <div class="download-box">
+                    <img src="Images/AdminKitPNG.png" alt="Admin Kit">
+                    <a href="MCstructure/AdminKit.mcstructure" class="download-button" download>Download Admin Kit</a>
+                </div>
+
+                <div class="download-box">
+                    <img src="Images/EnchantsPNG.png" alt="Enchants Kit">
+                    <a href="MCstructure/Enchants.mcstructure" class="download-button" download>Download Enchants Kit</a>
+                </div>
+
+                <div class="download-box">
+                    <img src="Images/NegativePNG.png" alt="Negative Shulker Kit">
+                    <a href="MCstructure/NegativeKit.mcstructure" class="download-button" download>Download Negative Shulker Kit</a>
+                </div>
+
+                <div class="download-box">
+                    <img src="Images/OPkitPNG.png" alt="OP Kit">
+                    <a href="MCstructure/OpKits.mcstructure" class="download-button" download>Download OP Kit</a>
+                </div>
+            </div>
+
+            <div id="StructuresGuide" class="section" style="display: none;">
+                <h3>Installation Guide</h3>
+                <p>Step 1) Click On Slash.</p>
+                <img src="Images/ClickOnSlash.png" alt="Click on Slash">
+                
+                <p>Step 2) Type in /give @s structure_block.</p>
+                <img src="Images/TypeInSlashGive@sStructure_Block.png" alt="Type in Give Command">
+                
+                <p>Step 3) Place the Structure Block.</p>
+                <img src="Images/PlaceStructureBlock.png" alt="Place Structure Block">
+                
+                <p>Step 4) Right-click on the Structure Block in Creative mode.</p>
+                <img src="Images/RightClickOnStructureBlockInCreative.png" alt="Right-click Structure Block">
+                
+                <p>Step 5) Switch mode to "Load".</p>
+                <img src="Images/SwitchModeToLoad.png" alt="Switch Mode to Load">
+                
+                <p>Step 6) Click on "Import".</p>
+                <img src="Images/ClickOnImport.png" alt="Click on Import">
+                
+                <p>Step 7) Open the .mcstructure file.</p>
+                <img src="Images/OpenTheMcstructure.png" alt="Open the .mcstructure file">
+                
+                <p>Step 8) Wait for the structure to be imported.</p>
+                <img src="Images/WaitForStructureImported.png" alt="Wait for Structure Imported">
+                
+                <p>Step 9) Click "Load" (not the dropdown menu).</p>
+                <img src="Images/ClickLoadButton.png" alt="Click Load Button">
+                
+                <p>Step 10) Wait for the display to show the structure.</p>
+                <img src="Images/WaitForDisplayToShowStructure.png" alt="Wait for Display to Show Structure">
+                
+                <p>Step 11) Explore the structure!</p>
+                <img src="Images/ExploreTheStructure.png" alt="Explore the Structure">
+                
+                <p>Step 12) Enjoy your structure!</p>
+                <img src="Images/EnjoyMyStructure.png" alt="Enjoy My Structure">
+            </div>
+        </div>
+
+        <div id="Templates" class="tabcontent">
+            <h2>Templates</h2>
+            <button class="guide-toggle" onclick="toggleGuide('TemplatesDownloads', this)">View Downloads<span class="arrow">&#9650;</span></button>
+            <button class="guide-toggle" onclick="toggleGuide('TemplatesGuide', this)">View Installation Guide<span class="arrow">&#9650;</span></button>
+
+            <div id="TemplatesDownloads" class="section">
+                <h3>Templates Downloads</h3>
+                <p>Coming soon!</p>
+            </div>
+
+            <div id="TemplatesGuide" class="section" style="display: none;">
+                <h3>Installation Guide</h3>
+                <p>Coming soon!</p>
+            </div>
+        </div>
+
+        <div id="Addons" class="tabcontent">
+            <h2>Addons</h2>
+            <button class="guide-toggle" onclick="toggleGuide('AddonsDownloads', this)">View Downloads<span class="arrow">&#9650;</span></button>
+            <button class="guide-toggle" onclick="toggleGuide('AddonsGuide', this)">View Installation Guide<span class="arrow">&#9650;</span></button>
+
+            <div id="AddonsDownloads" class="section">
+                <h3>Addons Downloads</h3>
+                <p>Coming soon!</p>
+            </div>
+
+            <div id="AddonsGuide" class="section" style="display: none;">
+                <h3>Installation Guide</h3>
+                <p>Coming soon!</p>
+            </div>
+        </div>
+
+        <div id="Worlds" class="tabcontent">
+            <h2>Worlds</h2>
+            <button class="guide-toggle" onclick="toggleGuide('WorldsDownloads', this)">View Downloads<span class="arrow">&#9650;</span></button>
+            <button class="guide-toggle" onclick="toggleGuide('WorldsGuide', this)">View Installation Guide<span class="arrow">&#9650;</span></button>
+
+            <div id="WorldsDownloads" class="section">
+                <h3>Worlds Downloads</h3>
+                <p>Coming soon!</p>
+            </div>
+
+            <div id="WorldsGuide" class="section" style="display: none;">
+                <h3>Installation Guide</h3>
+                <p>Coming soon!</p>
+            </div>
+        </div>
+
+        <!-- Script to manage tab content -->
+        <script>
+            function openTab(evt, tabName) {
+                var i, tabcontent, tablinks, arrows;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks");
+                arrows = document.getElementsByClassName("arrow");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                    arrows[i].classList.remove("down"); // Reset all arrows to up
+                }
+                document.getElementById(tabName).style.display = "block";
+                evt.currentTarget.className += " active";
+                evt.currentTarget.querySelector(".arrow").classList.toggle("down"); // Toggle the clicked arrow
+            }
+
+            function toggleGuide(guideId, button) {
+                var guide = document.getElementById(guideId);
+                var isCurrentlyVisible = guide.style.display === "block";
+
+                // Toggle the display based on current state
+                guide.style.display = isCurrentlyVisible ? "none" : "block";
+                button.querySelector(".arrow").classList.toggle("down", !isCurrentlyVisible); // Set arrow direction based on new state
+            }
+        </script>
+    </div>
+</body>
+
+</html>
