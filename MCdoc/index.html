@@ -1,0 +1,403 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Minecraft Doc</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        /* General page styling */
+        body {
+            background-color: #3E3E3E;
+            font-family: 'Press Start 2P', cursive; /* Minecraft-like font */
+        }
+
+        /* Page border styling */
+        .page-border {
+            border: 15px solid #7C7C7C;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 1200px;
+            background-color: #f9f9f9;
+        }
+
+        /* Tab container */
+        .tab-container {
+            margin: 20px 0;
+        }
+
+        /* Style the tab links */
+        .tab {
+            overflow: hidden;
+            background-color: #f1f1f1;
+        }
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 30px; /* Increased right padding */
+            transition: 0.3s;
+            font-family: 'Press Start 2P', cursive; /* Font for tab buttons */
+            position: relative; /* For positioning the arrow */
+            margin-right: 5px; /* Space between buttons */
+        }
+
+        .tab button:hover {
+            background-color: #4CAF50; /* Minecraft green */
+            color: white;
+        }
+
+        /* Create an active/current tab link */
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        /* Arrow icon */
+        .arrow {
+            position: absolute;
+            right: 15px; /* Position it on the right with more space */
+            top: 50%; /* Center it vertically */
+            transform: translateY(-50%); /* Adjust for centering */
+            transition: transform 0.3s; /* Animation for the arrow */
+        }
+
+        /* Arrow down class */
+        .arrow.down {
+            transform: translateY(-50%) rotate(180deg); /* Rotate 180 degrees for down */
+        }
+
+        /* Tab content */
+        .tabcontent {
+            display: none;
+            padding: 20px;
+            border-top: none;
+        }
+
+        
+.tabcontent {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+.tabcontent.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Image styling */
+        img {
+            width: 100%; /* Adjust width for banner */
+            height: auto;
+            margin: 10px 0;
+            border: 5px solid #7C7C7C;
+            border-radius: 5px;
+            box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Button styling */
+        .download-button {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            margin: 10px 0;
+        }
+
+        .download-button:hover {
+            background-color: #45a049; /* Slightly darker green */
+        }
+
+        /* Box styling for downloads and buttons */
+        .download-box {
+            border: 2px solid #7C7C7C;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #f0f0f0;
+        }
+
+        /* Section styling */
+        .section {
+            display: none; /* Hide sections by default */
+        }
+
+        /* Guide toggle buttons */
+        .guide-toggle {
+            padding: 10px 30px; /* Increased padding to prevent overlap */
+            margin: 5px;
+            background-color: #f1f1f1;
+            border: none;
+            cursor: pointer;
+            font-family: 'Press Start 2P', cursive; /* Font for toggle buttons */
+            position: relative; /* For positioning the arrow */
+            margin-right: 5px; /* Space between buttons */
+        }
+
+        .guide-toggle:hover {
+            background-color: #4CAF50; /* Minecraft green */
+            color: white;
+        }
+
+        /* Arrow for guide toggle buttons */
+        .guide-toggle .arrow {
+            right: 15px; /* Position it on the right with more space */
+        }
+
+        /* Guide image styling */
+        .guide-image {
+            max-width: 80%; /* Limit image size for guides */
+            height: auto; /* Maintain aspect ratio */
+            margin: 10px 0; /* Space around images */
+            border: 2px solid #7C7C7C; /* Slight border for images */
+            border-radius: 5px; /* Rounded corners for images */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page-border">
+        <h1>Welcome to the Minecraft Documentation</h1>
+        <p>This website is a guide/documentation of Minecraft Addons, Structures, and Templates. Start your Minecraft journey here!</p>
+
+        <!-- Banner image -->
+        <img src="Images/MinecraftEDUBanner.jfif" alt="Minecraft Edu Banner" style="width: 100%; height: auto; max-height: 200px; object-fit: cover;">
+
+        <!-- Tab links -->
+        <div class="tab-container">
+            <div class="tab">
+                <button class="tablinks" onclick="openTab(event, 'Structures')">Structures<span class="arrow">&#9650;</span></button>
+                <button class="tablinks" onclick="openTab(event, 'Templates')">Templates<span class="arrow">&#9650;</span></button>
+                <button class="tablinks" onclick="openTab(event, 'Addons')">Addons<span class="arrow">&#9650;</span></button>
+                <button class="tablinks" onclick="openTab(event, 'Worlds')">Worlds<span class="arrow">&#9650;</span></button>
+            </div>
+        </div>
+
+        <!-- Tab content -->
+        <div id="Structures" class="tabcontent">
+            <h2>Structure Downloads</h2>
+            <button class="guide-toggle" onclick="toggleGuide('StructuresDownloads', this)">View Downloads<span class="arrow">&#9650;</span></button>
+            <button class="guide-toggle" onclick="toggleGuide('StructuresGuide', this)">View Installation Guide<span class="arrow">&#9650;</span></button>
+
+            <div id="StructuresDownloads" class="section">
+                <div class="download-box">
+                    <img src="Images/AdminKitPNG.png" alt="Admin Kit">
+                    <a href="MCstructure/AdminKit.mcstructure" class="download-button" download>Download Admin Kit</a>
+                </div>
+
+                <div class="download-box">
+                    <img src="Images/EnchantsPNG.png" alt="Enchants Kit">
+                    <a href="MCstructure/Enchants.mcstructure" class="download-button" download>Download Enchants Kit</a>
+                </div>
+
+                <div class="download-box">
+                    <img src="Images/NegativePNG.png" alt="Negative Shulker Kit">
+                    <a href="MCstructure/NegativeKit.mcstructure" class="download-button" download>Download Negative Shulker Kit</a>
+                </div>
+
+                <div class="download-box">
+                    <img src="Images/OPkitPNG.png" alt="OP Kit">
+                    <a href="MCstructure/OpKits.mcstructure" class="download-button" download>Download OP Kit</a>
+                </div>
+            </div>
+
+            <div id="StructuresGuide" class="section" style="display: none;">
+                <h3>Installation Guide</h3>
+                <p>Step 1) Click On Slash.</p>
+                <img src="Images/ClickOnSlash.png" alt="Click on Slash" class="guide-image">
+                
+                <p>Step 2) Type in /give @s structure_block.</p>
+                <img src="Images/TypeInSlashGive@sStructure_Block.png" alt="Type in Give Command" class="guide-image">
+                
+                <p>Step 3) Place the Structure Block.</p>
+                <img src="Images/PlaceStructureBlock.png" alt="Place Structure Block" class="guide-image">
+                
+                <p>Step 4) Right-click on the Structure Block in Creative mode.</p>
+                <img src="Images/RightClickOnStructureBlockInCreative.png" alt="Right-click Structure Block" class="guide-image">
+                
+                <p>Step 5) Switch mode to "Load".</p>
+                <img src="Images/SwitchModeToLoad.png" alt="Switch Mode to Load" class="guide-image">
+                
+                <p>Step 6) Click on "Import".</p>
+                <img src="Images/ClickOnImport.png" alt="Click on Import" class="guide-image">
+                
+                <p>Step 7) Open the .mcstructure file.</p>
+                <img src="Images/OpenTheMcstructure.png" alt="Open the mcstructure" class="guide-image">
+                
+                <p>Step 8) Wait for the structure to be imported.</p>
+                <img src="Images/WaitForStructureImported.png" alt="Wait for Import" class="guide-image">
+                
+                <p>Step 9) Click the Load Button.</p>
+                <img src="Images/ClickLoadButton.png" alt="Click Load Button" class="guide-image">
+                
+                <p>Step 10) Wait for the display to show the structure.</p>
+                <img src="Images/WaitForDisplayToShowStructure.png" alt="Wait for Display" class="guide-image">
+                
+                <p>Step 11) Explore the structure!</p>
+                <img src="Images/ExploreTheStructure.png" alt="Explore Structure" class="guide-image">
+                
+                <p>Step 12) Enjoy your structure!</p>
+                <img src="Images/EnjoyMyStructure.png" alt="Enjoy Your Structure" class="guide-image">
+            </div>
+        </div>
+
+        <div id="Templates" class="tabcontent">
+            <h2>Template Downloads</h2>
+            <button class="guide-toggle" onclick="toggleGuide('TemplatesDownloads', this)">View Downloads<span class="arrow">&#9650;</span></button>
+            <button class="guide-toggle" onclick="toggleGuide('TemplatesGuide', this)">View Installation Guide<span class="arrow">&#9650;</span></button>
+
+            <div id="TemplatesDownloads" class="section">
+                <div class="download-box">
+                    <img src="Images/TNTRUUUN.jfif" alt="Template 1">
+                    <a href="MCtemplate/TNTrun.mctemplate" class="download-button" download>Download TnT Run</a>
+                </div>
+
+                <div class="download-box">
+                    <img src="Images/Template2.png" alt="">
+                    <a href="MCtemplate/Template2.mcstructure" class="download-button" download>A New Template Coming Soon!</a>
+                </div>
+            </div>
+
+            <div id="TemplatesGuide" class="section" style="display: none;">
+                <h3>Installation Guide</h3>
+		<p>Step 1) Open the downloaded .mctemplate file.</p>
+                <img src="Images/OpenDownloadFile.png" alt="Open Download File" class="guide-image">
+		
+		<p>Step 2) Wait For Template Import (you must have minecraft)</p>
+                <img src="Images/ImportTemplate.png" alt="Wait for template successful import" class="guide-image">
+
+		<p>Step 3) Go To "My Teplates"</p>
+                <img src="Images/MyTemplates.png" alt="Go To My Templates" class="guide-image">
+
+		 <p>Step 4) Click On Template And "Create New"</p>
+                <img src="Images/CreateNew.png" alt="Create new template" class="guide-image">
+
+		<p>Step 5) Play Or Host Your Template</p>
+                <img src="Images/PlayTemplate.png" alt="Play or Host" class="guide-image">
+
+		<p>Step 6) Enjoy Your Template!</p>
+                <img src="Images/EnjoyTemplate.png" alt="Enjoy!" class="guide-image">
+
+            </div>
+        </div>
+
+        <div id="Addons" class="tabcontent">
+            <h2>Addon Downloads</h2>
+            <button class="guide-toggle" onclick="toggleGuide('AddonsDownloads', this)">View Downloads<span class="arrow">&#9650;</span></button>
+            <button class="guide-toggle" onclick="toggleGuide('AddonsGuide', this)">View Installation Guide<span class="arrow">&#9650;</span></button>
+
+            <div id="AddonsDownloads" class="section">
+                <div class="download-box">
+                    <img src="Images/BabyEnderJPEG.jfif" alt="Baby Ender Dragon">
+                    <a href="MCaddon/BabyEnderDragon-v1.0.0.mcaddon" class="download-button" download>Download Baby Ender Dragon</a>
+                    <p>Wandering around the nether are these beasts, but could they also be your friend? Tame them with nether warts and they will fight for you!</p>
+                </div>
+
+                <div class="download-box">
+                    <img src="Images/ameJPEG.jfif" alt="Ame Mod">
+                    <a href="MCaddon/ame.mcaddon" class="download-button" download>Download All Mobs Explode Mod</a>
+                    <p>Minecraft, But All Mobs Explode! (A great prank between friends!)</p>
+                </div>
+            </div>
+
+            <div id="AddonsGuide" class="section" style="display: none;">
+                <h3>Installation Guide</h3>
+                <p>Step 1) Open the downloaded .mcaddon file.</p>
+                <img src="Images/OpenDownloadFile.png" alt="Open Download File" class="guide-image">
+                
+                <p>Step 2) Import Success!</p>
+                <img src="Images/ImportSuccess.png" alt="Import Success" class="guide-image">
+                
+                <p>Step 3) Go to Settings.</p>
+                <img src="Images/Settings.png" alt="Settings" class="guide-image">
+                
+                <p>Step 4) Select Resource Packs.</p>
+                <img src="Images/ResourcePacks.png" alt="Resource Packs" class="guide-image">
+                
+                <p>Step 5) Find your pack under My Packs (if you have one)</p>
+                <img src="Images/MyPacks.png" alt="My Packs" class="guide-image">
+                
+                <p>Step 6) Activate your pack.</p>
+                <img src="Images/Activated.png" alt="Activate Pack" class="guide-image">
+                
+                <p>Step 7) Check Behavior Packs and repeat steps five and six</p>
+                <img src="Images/Behavior.png" alt="Behavior Packs" class="guide-image">
+            </div>
+        </div>
+
+        <div id="Worlds" class="tabcontent">
+            <h2>World Downloads</h2>
+            <button class="guide-toggle" onclick="toggleGuide('WorldsDownloads', this)">View Downloads<span class="arrow">&#9650;</span></button>
+            <button class="guide-toggle" onclick="toggleGuide('WorldsGuide', this)">View Installation Guide<span class="arrow">&#9650;</span></button>
+
+            <div id="WorldsDownloads" class="section">
+                <div class="download-box">
+                    <img src="Images/EnjoyYourWorld.png" alt="World BedWars version two point five">
+                    <a href="MCworld/BedWars.mcworld" class="download-button" download>Download BedWars v2.5</a>
+                </div>
+
+                <div class="download-box">
+                    <img src="Images/SkyWarsPlay.png" alt="SkyWars World Play Image1">
+		    <img src="Images/SkyWarsGo.png" alt="SkyWars World Play Image2">
+		    <img src="Images/SkyWarsUnderground.png" alt="SkyWars World Play Image3">
+                    <a href="MCworld/SKYWARSUpdate.mcworld" class="download-button" download>Download SkyWars v9.3 Updated</a>
+                </div>
+            </div>
+
+            <div id="WorldsGuide" class="section" style="display: none;">
+                <h3>Installation Guide</h3>
+		<p>Step 1) Open the downloaded .mcworld file.</p>
+                <img src="Images/OpenDownloadFile.png" alt="Open Download File" class="guide-image">
+		
+		<p>Step 2) Import started...</p>
+                <img src="Images/ImportStaredForWorld.png" alt="Import Started" class="guide-image">
+		
+		 <p>Step 3)Wait For World Import Success!</p>
+                <img src="Images/WorldSuccess.png" alt="World Import Success" class="guide-image">
+		
+		 <p>Step 4) Enjoy Your World!</p>
+                <img src="Images/EnjoyYourWorld.png" alt="Bed Wars Map Image" class="guide-image">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function openTab(evt, tabName) {
+    var tabcontent = document.getElementsByClassName("tabcontent");
+    for (var i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].classList.remove('active');
+    }
+
+    var tablinks = document.getElementsByClassName("tablinks");
+    for (var i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+        tablinks[i].querySelector('.arrow').classList.remove('down');  // Reset all arrows
+    }
+
+    document.getElementById(tabName).classList.add('active');
+    evt.currentTarget.className += " active";
+    evt.currentTarget.querySelector('.arrow').classList.add('down');  // Rotate arrow for active tab
+}
+
+    function toggleGuide(guideId, button) {
+        var guide = document.getElementById(guideId);
+        if (guide.style.display === "none") {
+            guide.style.display = "block";
+            button.querySelector('.arrow').classList.add('down');
+        } else {
+            guide.style.display = "none";
+            button.querySelector('.arrow').classList.remove('down');
+        }
+    }
+</script>
+
+</body>
+</html>
